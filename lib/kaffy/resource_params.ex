@@ -3,7 +3,9 @@ defmodule Kaffy.ResourceParams do
 
   def decode_map_fields(resource, schema, params) do
     map_fields = ResourceSchema.get_map_fields(schema) |> Enum.map(fn {f, _} -> to_string(f) end)
-    binary_fields = ResourceSchema.get_binary_fields(schema) |> Enum.map(fn {f, _} -> to_string(f) end)
+
+    binary_fields =
+      ResourceSchema.get_binary_fields(schema) |> Enum.map(fn {f, _} -> to_string(f) end)
 
     attrs =
       Map.get(params, resource, %{})

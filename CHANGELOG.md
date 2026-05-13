@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v0.12.0 (2026-05-13)
+
+This is the first (proper) release of the Workera fork (`workera-ai/kaffy`) on top of upstream v0.11.0.
+
+### Added
+- Textarea input in the list action, with a configurable `rows` key (PR #2).
+- Nested search fields — search across association fields (PR #3).
+- UUIDv7 support for foreign key rendering (PR #6).
+- `:value` option for the `form_fields` function (PR #7).
+
+### Fixes
+- 404 and 500 errors when viewing individual items, caused by passing unsupported options to `JSON.encode!` (PR #4).
+- Unable to create new entities — removed `JSON` options no longer maintained by JSON libraries (PR #5).
+
+### Changed
+- `decimal` dependency requirement bumped from `~> 2.2` to `~> 3.0`.
+- Bumped `ecto`, `ex_doc`, `mock`, and several transitive dependencies to their latest versions.
+- Added Workera to the package maintainers list.
+
 ## v0.11.0 (2025-10-02)
 
 ### Added

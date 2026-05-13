@@ -153,7 +153,7 @@ defmodule Kaffy.ResourceForm do
       {:embed, %{cardinality: :one}} ->
         embed = Kaffy.ResourceSchema.embed_struct(schema, field)
         embed_fields = Kaffy.ResourceSchema.fields(embed)
-        embed_changeset = Ecto.Changeset.change(Map.get(data, field) || embed.__struct__)
+        embed_changeset = Ecto.Changeset.change(Map.get(data, field) || embed.__struct__())
 
         inputs_for(form, field, fn fp ->
           [
