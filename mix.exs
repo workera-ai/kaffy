@@ -2,7 +2,7 @@ defmodule Kaffy.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/aesmail/kaffy"
-  @version "0.10.3"
+  @version "0.12.0"
 
   def project do
     [
@@ -35,7 +35,7 @@ defmodule Kaffy.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:phoenix, "~> 1.7.10"},
+      {:phoenix, "~> 1.7.21 or ~> 1.8.0"},
       {:phoenix_html, "~> 4.0"},
       {:phoenix_html_helpers, "~> 1.0"},
       {:phoenix_view, "~> 2.0.2"},
@@ -43,7 +43,7 @@ defmodule Kaffy.MixProject do
       {:ecto, "~> 3.12"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:jason, "~> 1.3", only: :test},
-      {:decimal, "~> 2.2", optional: true},
+      {:decimal, "~> 3.0", optional: true},
       {:uuidv7, "~> 1.0", optional: true}
     ]
   end
@@ -54,7 +54,7 @@ defmodule Kaffy.MixProject do
 
   defp package() do
     [
-      maintainers: ["Abdullah Esmail"],
+      maintainers: ["Abdullah Esmail", "Workera"],
       licenses: ["MIT"],
       links: %{
         "GitHub" => @source_url,

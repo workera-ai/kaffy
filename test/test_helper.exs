@@ -49,7 +49,7 @@ defmodule KaffyTest.Schemas.Owner do
 
   @primary_key false
   schema "owner" do
-    field :person_id, :id, primary_key: true
-    field :pet_id, :id, primary_key: true
+    field(:person_id, :id, primary_key: true)
+    field(:pet_id, :id, primary_key: true)
   end
 end

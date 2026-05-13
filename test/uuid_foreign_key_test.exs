@@ -40,11 +40,12 @@ defmodule UuidForeignKeyTest do
 
       assert primary_key == :id
 
-      options = Enum.map(records, fn record ->
-        pk_value = Map.get(record, primary_key)
-        display_value = Map.get(record, :name, "Resource ##{pk_value}")
-        {display_value, pk_value}
-      end)
+      options =
+        Enum.map(records, fn record ->
+          pk_value = Map.get(record, primary_key)
+          display_value = Map.get(record, :name, "Resource ##{pk_value}")
+          {display_value, pk_value}
+        end)
 
       expected_options = [
         {"Record 1", uuid1},
