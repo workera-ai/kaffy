@@ -8,6 +8,22 @@
 
 ![What You Get](assets/kaffy_index.png)
 
+## About this fork
+
+This is the [Workera](https://workera.ai) fork of [aesmail/kaffy](https://github.com/aesmail/kaffy). It tracks upstream and adds a handful of features and fixes used in production at Workera (nested search, UUIDv7 foreign keys, textarea list-action inputs, JSON-encoding fixes, etc. — see [CHANGELOG.md](./CHANGELOG.md)).
+
+It is **not published to Hex**. To depend on it, point at this repository directly:
+
+```elixir
+def deps do
+  [
+    {:kaffy, github: "workera-ai/kaffy", tag: "v0.12.0"}
+  ]
+end
+```
+
+The rest of this README is from upstream and applies unchanged.
+
 ## Introduction
 
 Kaffy was created out of a need to have a powerfully simple, flexible, and customizable admin interface
@@ -15,6 +31,7 @@ without the need to touch the current codebase. It was inspired by django's love
 
 ## Sections
 
+- [About this fork](#about-this-fork)
 - [Introduction](#introduction)
 - [Sections](#sections)
 - [Sponsors](#sponsors)
@@ -63,6 +80,7 @@ Starting with v0.10.0, Kaffy will officially support the latest two phoenix vers
 
 | Kaffy   | Supported phoenix versions |
 |---------|----------------------------|
+| v0.12.x | 1.7.21, 1.8.x              |
 | v0.11.x | 1.7.21, 1.8.x              |
 | v0.10.x | 1.6, 1.7.0                 |
 |         |                            |
@@ -75,10 +93,21 @@ The latest released `major.minor` version will be supported. For example, if the
 ## Installation
 
 #### Add `:kaffy` as a dependency
+
+For the upstream package from Hex:
 ```elixir
 def deps do
   [
-    {:kaffy, "~> 0.10.0"}
+    {:kaffy, "~> 0.11.0"}
+  ]
+end
+```
+
+For the Workera fork (this repository):
+```elixir
+def deps do
+  [
+    {:kaffy, github: "workera-ai/kaffy", tag: "v0.12.0"}
   ]
 end
 ```
