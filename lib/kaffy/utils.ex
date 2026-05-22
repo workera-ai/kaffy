@@ -50,10 +50,17 @@ defmodule Kaffy.Utils do
         css_class = Keyword.get(admin_logo, :class)
         css_style = Keyword.get(admin_logo, :style)
 
-        tag =
-          ~s[<img src="#{url}" alt="logo" class="#{css_class}" style="#{css_style}" />]
+        attrs =
+          [
+            ~s[src="#{url}"],
+            ~s[alt="logo"],
+            if(css_class not in [nil, ""], do: ~s[class="#{css_class}"]),
+            if(css_style not in [nil, ""], do: ~s[style="#{css_style}"])
+          ]
+          |> Enum.reject(&is_nil/1)
+          |> Enum.join(" ")
 
-        {:safe, tag}
+        {:safe, "<img #{attrs} />"}
 
       true ->
         tag = ~s[<img src="#{admin_logo}" alt="logo" />]

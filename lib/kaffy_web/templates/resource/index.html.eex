@@ -52,7 +52,7 @@
                         </button>
                       <% else %>
                         <%= form_tag(Kaffy.Utils.router().kaffy_resource_path(@conn, :list_action, @context, @resource, to_string(action_key)), method: :post, class: "list-action", id: "#{action_key}_form") %>
-                          <input type="submit" name="submit" value="<%= options.name %>" class="btn btn-link dropdown-item kaffy-list-action-submit" id="<%= action_key %>_submit" onclick="return confirm('Are you sure?');" />
+                          <input type="submit" name="submit" value="<%= options.name %>" class="btn btn-link dropdown-item kaffy-list-action-submit" id="<%= action_key %>_submit" data-confirm="Are you sure?" />
                         </form>
                       <% end %>
                   <% end %>
@@ -87,7 +87,7 @@
   </div>
 </div>
 
-<form id="kaffy-filters-form" method="get" style="display:none;">
+<form id="kaffy-filters-form" method="get" class="kaffy-hidden">
   <%= if Kaffy.ResourceSchema.has_field_filters?(@my_resource) do %>
     <%= for field <- @fields do %>
         <% {field, filters} = Kaffy.ResourceSchema.kaffy_field_filters(@my_resource[:schema], field) %>

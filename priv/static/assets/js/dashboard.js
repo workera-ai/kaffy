@@ -88,6 +88,13 @@ $(document).ready(function () {
     event.preventDefault();
   })
 
+  $(".kaffy-progress-bar").each(function () {
+    var percentage = $(this).data("progress");
+    if (percentage !== undefined && percentage !== null && percentage !== "") {
+      this.style.width = percentage + "%";
+    }
+  });
+
   $(".kaffy-chart").each(function () {
     var currentChart = $(this);
     var chartId = currentChart.children("canvas").first().attr('id');
