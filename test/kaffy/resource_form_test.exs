@@ -77,7 +77,6 @@ defmodule Kaffy.ResourceFormTest do
     test "render richtext field" do
       html = render_field(:description, field_opts: %{type: :richtext})
       assert html =~ ~r/^<textarea/
-      assert html =~ ~r/class="kaffy-editor"/
     end
   end
 

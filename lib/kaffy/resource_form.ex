@@ -197,7 +197,6 @@ defmodule Kaffy.ResourceForm do
         text_input(form, field, opts)
 
       :richtext ->
-        opts = add_class(opts, "kaffy-editor")
         textarea(form, field, opts)
 
       :textarea ->

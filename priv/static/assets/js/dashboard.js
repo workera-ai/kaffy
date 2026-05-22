@@ -2,21 +2,6 @@ $(document).ready(function () {
   Chart.defaults.font.family = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
   Chart.defaults.color = '#292b2c';
 
-  $(".kaffy-editor").each(function () {
-    var textareaId = "#" + $(this).attr('id');
-    ClassicEditor
-      .create(document.querySelector(textareaId), {
-        // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
-        toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|', 'indent', 'outdent', '|', 'insertTable', '|', 'undo', 'redo']
-      })
-      .then(editor => {
-        window.editor = editor;
-      })
-      .catch(err => {
-        console.error(err.stack);
-      });
-  });
-
   $(".kaffy-filter").change(function () {
     var selectFilter = $(this);
     var fieldName = selectFilter.data('field-name');
