@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-  Chart.defaults.global.defaultFontColor = '#292b2c';
+  Chart.defaults.font.family = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+  Chart.defaults.color = '#292b2c';
 
   $(".kaffy-editor").each(function () {
     var textareaId = "#" + $(this).attr('id');
@@ -109,7 +109,8 @@ $(document).ready(function () {
         labels: xAxis,
         datasets: [{
           label: yTitle,
-          lineTension: 0.3,
+          tension: 0.3,
+          fill: true,
           backgroundColor: "rgba(2,117,216,0.2)",
           borderColor: "rgba(2,117,216,1)",
           pointRadius: 5,
@@ -134,59 +135,49 @@ $(document).ready(function () {
           }
         },
         scales: {
-          xAxes: [{
-            // time: {
-            //   unit: 'date'
-            // },
-            gridLines: {
-              display: false,
-              drawBorder: false
+          x: {
+            grid: {
+              display: false
+            },
+            border: {
+              display: false
             },
             ticks: {
               maxTicksLimit: 7
             }
-          }],
-          yAxes: [{
+          },
+          y: {
             ticks: {
               maxTicksLimit: 5,
-              padding: 10,
-              // Include a dollar sign in the ticks
-              // callback: function (value, index, values) {
-              //   return '$' + number_format(value);
-              // }
+              padding: 10
             },
-            gridLines: {
-              color: "rgb(234, 236, 244)",
-              zeroLineColor: "rgb(234, 236, 244)",
-              drawBorder: false,
-              borderDash: [2],
-              zeroLineBorderDash: [2]
+            grid: {
+              color: "rgb(234, 236, 244)"
+            },
+            border: {
+              display: false,
+              dash: [2]
             }
-          }],
+          }
         },
-        legend: {
-          display: false
-        },
-        tooltips: {
-          backgroundColor: "rgb(255,255,255)",
-          bodyFontColor: "#858796",
-          titleMarginBottom: 10,
-          titleFontColor: '#6e707e',
-          titleFontSize: 14,
-          borderColor: '#dddfeb',
-          borderWidth: 1,
-          xPadding: 15,
-          yPadding: 15,
-          displayColors: false,
-          intersect: false,
-          mode: 'index',
-          caretPadding: 10,
-          // callbacks: {
-          //   label: function (tooltipItem, chart) {
-          //     var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          //     return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
-          //   }
-          // }
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            backgroundColor: "rgb(255,255,255)",
+            bodyColor: "#858796",
+            titleMarginBottom: 10,
+            titleColor: '#6e707e',
+            titleFont: { size: 14 },
+            borderColor: '#dddfeb',
+            borderWidth: 1,
+            padding: { x: 15, y: 15 },
+            displayColors: false,
+            intersect: false,
+            mode: 'index',
+            caretPadding: 10
+          }
         }
       }
     });
