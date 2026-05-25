@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## v0.13.0 (2026-05-25)
 
-CSP hardening release. Removes the last sources of `style-src 'unsafe-inline'` and `script-src 'unsafe-inline'` violations from Kaffy admin so it can run under a strict nonce-based Content Security Policy (HER-783).
+CSP hardening release. Removes the last sources of `style-src 'unsafe-inline'` and `script-src 'unsafe-inline'` violations from Kaffy admin so it can run under a strict nonce-based Content Security Policy.
 
 ### Removed
 - Rich text editor (CKEditor). The `:richtext` field type still renders — as a plain textarea — so consumer schemas declaring it keep compiling.
