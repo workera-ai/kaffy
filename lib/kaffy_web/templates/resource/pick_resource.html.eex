@@ -1,4 +1,4 @@
-<div id="pick-resource" style="display:none;">
+<div id="pick-resource" class="kaffy-hidden">
     <div id="pick-field-name"><%= @conn.params["pick"] %></div>
 </div>
 
@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<form id="kaffy-filters-form" method="get" style="display:none;">
+<form id="kaffy-filters-form" method="get" class="kaffy-hidden">
   <%= if Kaffy.ResourceSchema.has_field_filters?(@my_resource) do %>
     <%= for field <- @fields do %>
         <% {field, filters} = Kaffy.ResourceSchema.kaffy_field_filters(@my_resource[:schema], field) %>

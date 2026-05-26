@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v0.13.0 (2026-05-25)
+
+CSP hardening release. Removes the last sources of `style-src 'unsafe-inline'` and `script-src 'unsafe-inline'` violations from Kaffy admin so it can run under a strict nonce-based Content Security Policy.
+
+### Removed
+- Rich text editor (CKEditor). The `:richtext` field type still renders — as a plain textarea — so consumer schemas declaring it keep compiling.
+
+### Changed
+- Chart.js bumped from 2.9.3 to 4.5.1. v4 is `eval`-free and emits no inline styles. The dashboard line chart was migrated to the v4 API (`x`/`y` scale objects, grid border options under `border.*`, legend and tooltip under `plugins.*`, `lineTension` → `tension`, explicit `fill: true`).
+- Inline `style="..."` attributes in templates replaced with CSS classes (`kaffy-hidden`, `kaffy-embed-card`, `kaffy-progress-bar`).
+- Inline `onclick="confirm(...)"` handlers replaced with `data-confirm` attributes wired through `dashboard.js`.
+
 ## v0.12.0 (2026-05-13)
 
 This is the first (proper) release of the Workera fork (`workera-ai/kaffy`) on top of upstream v0.11.0.

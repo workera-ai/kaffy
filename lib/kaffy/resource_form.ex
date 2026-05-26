@@ -157,7 +157,7 @@ defmodule Kaffy.ResourceForm do
 
         inputs_for(form, field, fn fp ->
           [
-            {:safe, ~s(<div class="card ml-3" style="padding:15px;">)},
+            {:safe, ~s(<div class="card ml-3 kaffy-embed-card">)},
             Enum.reduce(embed_fields, [], fn {f, embed_options}, all ->
               content_tag :div, class: "form-group" do
                 [
@@ -197,7 +197,6 @@ defmodule Kaffy.ResourceForm do
         text_input(form, field, opts)
 
       :richtext ->
-        opts = add_class(opts, "kaffy-editor")
         textarea(form, field, opts)
 
       :textarea ->

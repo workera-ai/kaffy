@@ -227,3 +227,12 @@ a.kaffy-order-field {
     font-size: .75rem;
     font-style: italic;
 }
+
+/* CSP-safe replacements for inline styles */
+.kaffy-hidden {
+    display: none;
+}
+
+.kaffy-embed-card {
+    padding: 15px;
+}
