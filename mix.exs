@@ -39,9 +39,7 @@ defmodule Kaffy.MixProject do
       {:phoenix_html, "~> 4.0"},
       {:phoenix_html_helpers, "~> 1.0"},
       {:phoenix_view, "~> 2.0.2"},
-      {:mock, "~> 0.3.9", only: :test},
-      # mock pins meck ~> 0.9.2, which fails to compile on OTP 29
-      {:meck, "~> 1.2", only: :test, override: true},
+      {:mimic, "~> 2.4", only: :test},
       {:ecto, "~> 3.12"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:jason, "~> 1.3", only: :test},
