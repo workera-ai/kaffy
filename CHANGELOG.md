@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v0.14.0 (2026-10-19)
+
+### Changed
+- Minimum supported Elixir version is now 1.19, and minimum Erlang/OTP is now 28. CI tests against OTP 28 / Elixir 1.19 and OTP 29 / Elixir 1.20.
+- Dependencies updated to latest: phoenix 1.8.15, ecto 3.14.2, decimal 3.2.0, ex_doc 0.40.4, plus transitive updates.
+
 ## v0.13.0 (2026-05-25)
 
 CSP hardening release. Removes the last sources of `style-src 'unsafe-inline'` and `script-src 'unsafe-inline'` violations from Kaffy admin so it can run under a strict nonce-based Content Security Policy.

@@ -2,13 +2,13 @@ defmodule Kaffy.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/aesmail/kaffy"
-  @version "0.13.0"
+  @version "0.14.0"
 
   def project do
     [
       app: :kaffy,
       version: @version,
-      elixir: "~> 1.12",
+      elixir: "~> 1.19",
       compilers: Mix.compilers(),
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
@@ -39,7 +39,9 @@ defmodule Kaffy.MixProject do
       {:phoenix_html, "~> 4.0"},
       {:phoenix_html_helpers, "~> 1.0"},
       {:phoenix_view, "~> 2.0.2"},
-      {:mock, "~> 0.3.3", only: :test},
+      {:mock, "~> 0.3.9", only: :test},
+      # mock pins meck ~> 0.9.2, which fails to compile on OTP 29
+      {:meck, "~> 1.2", only: :test, override: true},
       {:ecto, "~> 3.12"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:jason, "~> 1.3", only: :test},
