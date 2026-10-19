@@ -230,7 +230,7 @@ defmodule Kaffy.ResourceAdmin do
   """
   def create_changeset(resource, changes) do
     schema = resource[:schema]
-    schema_struct = schema.__struct__
+    schema_struct = schema.__struct__()
     functions = schema.__info__(:functions)
 
     default =
@@ -247,7 +247,7 @@ defmodule Kaffy.ResourceAdmin do
       resource,
       :create_changeset,
       default,
-      [schema.__struct__, changes],
+      [schema.__struct__(), changes],
       false
     )
   end

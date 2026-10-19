@@ -17,7 +17,7 @@ It is **not published to Hex**. To depend on it, point at this repository direct
 ```elixir
 def deps do
   [
-    {:kaffy, github: "workera-ai/kaffy", tag: "v0.13.0"}
+    {:kaffy, github: "workera-ai/kaffy", tag: "v0.14.0"}
   ]
 end
 ```
@@ -76,10 +76,13 @@ Sponsor the [development of Kaffy](https://github.com/sponsors/aesmail) through 
 
 ## Minimum Requirements
 
+The Workera fork requires Elixir 1.19+ and Erlang/OTP 28+ starting with v0.14.0.
+
 Starting with v0.10.0, Kaffy will officially support the latest two phoenix versions.
 
 | Kaffy   | Supported phoenix versions |
 |---------|----------------------------|
+| v0.14.x | 1.7.21, 1.8.x              |
 | v0.13.x | 1.7.21, 1.8.x              |
 | v0.12.x | 1.7.21, 1.8.x              |
 | v0.11.x | 1.7.21, 1.8.x              |
@@ -108,7 +111,7 @@ For the Workera fork (this repository):
 ```elixir
 def deps do
   [
-    {:kaffy, github: "workera-ai/kaffy", tag: "v0.13.0"}
+    {:kaffy, github: "workera-ai/kaffy", tag: "v0.14.0"}
   ]
 end
 ```
